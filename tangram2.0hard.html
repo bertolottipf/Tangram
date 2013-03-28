@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tangram</title>
+	
+	<meta name="generator" content="Geany 0.19.1" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	
+	<!--<script type="text/javascript" src="https://api.qubeos2.com/api.js?apikey=58234ea9e878dc61e86cd5731a6750049f75c61f"></script>-->
+	
+	<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.12.custom.min.js"></script>
+	<!--<script type="text/javascript" src="js/jquery.transform-0.9.3.min.js"></script>-->
+	<script type="text/javascript">
+		
+		/*qubeOS.onDocReady(function(){
+			
+			qubeOS.window({
+				id: 'tangram',
+				title: 'Tangram',
+				contentType:'iframe',
+				url:'http://www.bertolottipf.it/qubeos/tangram.html',
+				left:'center',
+				top:'center',
+				width:500,
+				height: 600
+			});
+
+			qubeOS.getBoost();			
+
+			qubeOS.load("http://code.jquery.com/jquery-latest.js", "js");*/
+
+			
+			
+			
+		$(document).ready(function(){
+			var selection = "tngrm7";
+			
+			var tngrm1dgr = 0;
+			var tngrm2dgr = 0;
+			var tngrm3dgr = 0;
+			var tngrm4dgr = 0;
+			var tngrm5dgr = 0;
+			var tngrm6dgr = 0;
+			var tngrm7dgr = 0;
+			
+			$('#tngrm1').draggable();
+			$('#tngrm1').bind("click",function(){
+				tngrm1dgr = tngrm1dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm1').animate({rotate: tngrm1dgr});
+				//$('#tngrm1').css('-webkit-transform', 'rotate(' + tngrm1dgr + 'deg)');
+				$('#tngrm1').css('z-index', '2');
+				
+				selection = "tngrm1";
+				$("#obj_to_rotate").html("Ruotare il pezzo fucsia di ");
+			});
+			
+			$('#tngrm2').draggable();
+			$('#tngrm2').bind("click",function(){
+				tngrm2dgr = tngrm2dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm2').animate({rotate: tngrm2dgr});
+				//$('#tngrm2').css('-webkit-transform', 'rotate(' + tngrm2dgr + 'deg)');
+				$('#tngrm2').css('z-index', '2');
+				
+				selection = "tngrm2";
+				$("#obj_to_rotate").html("Ruotare il pezzo giallo di ");
+			});
+			
+			$('#tngrm3').draggable();
+			$('#tngrm3').bind("click",function(){
+				tngrm3dgr = tngrm3dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm3').animate({rotate: tngrm3dgr});
+				//$('#tngrm3').css('-webkit-transform', 'rotate(' + tngrm3dgr + 'deg)');
+				$('#tngrm3').css('z-index', '2');
+				
+				selection = "tngrm3";
+				$("#obj_to_rotate").html("Ruotare il pezzo grigio di ");
+			});
+			
+			$('#tngrm4').draggable();
+			$('#tngrm4').bind("click",function(){
+				tngrm4dgr = tngrm4dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm4').animate({rotate: tngrm4dgr});
+				//$('#tngrm4').css('-webkit-transform', 'rotate(' + tngrm4dgr + 'deg)');
+				$('#tngrm4').css('z-index', '2');
+				
+				selection = "tngrm4";
+				$("#obj_to_rotate").html("Ruotare il pezzo viola di ");
+			});
+			
+			$('#tngrm5').draggable();
+			$('#tngrm5').bind("click",function(){
+				tngrm5dgr = tngrm5dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm5').animate({rotate: tngrm5dgr});
+				//$('#tngrm5').css('-webkit-transform', 'rotate(' + tngrm5dgr + 'deg)');
+				$('#tngrm5').css('z-index', '2');
+				
+				selection = "tngrm5";
+				$("#obj_to_rotate").html("Ruotare il pezzo blu di ");
+			});
+			
+			$('#tngrm6').draggable();
+			$('#tngrm6').bind("click",function(){
+				tngrm6dgr = tngrm6dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm6').animate({rotate: tngrm6dgr});
+				//$('#tngrm6').css('-webkit-transform', 'rotate(' + tngrm6dgr + 'deg) skewY(-45deg) ');
+				$('#tngrm6').css('z-index', '2');
+				
+				selection = "tngrm6";
+				$("#obj_to_rotate").html("Ruotare il pezzo nero di ");
+			});
+			
+			$('#tngrm7').draggable();
+			$('#tngrm7').bind("click",function(){
+				tngrm7dgr = tngrm7dgr + 45;
+				//l'oggetto ruota da 0 a 45 gradi gradualmente
+				//$('#tngrm7').animate({rotate: tngrm7dgr});
+				//$('#tngrm7').css('-webkit-transform', 'rotate(' + tngrm7dgr + 'deg)');
+				$('#tngrm7').css('z-index', '2');
+				
+				selection = "tngrm7";
+				$("#obj_to_rotate").html("Ruotare il pezzo verde di ");
+			});
+			
+			$('#rotate').bind('click', function() {
+				var deg = $('#rotate_deg').val();
+				alert(selection+" :: "+ deg);
+				rotate(selection, deg);
+			});
+			
+		});
+		
+		function rotate(obj, deg){
+			 if (isNaN(deg)) {
+				 alert("Attenzione: inserire solo numeri")
+			 } else {
+				 $('#' + obj).css('-webkit-transform', 'rotate(' + deg + 'deg)');
+			 }
+		}
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="geometria.css" />
+</head>
+
+<body>
+	<div id="cornice">
+		<div id="intro">
+			<strong>Tangram versione 1.9</strong><br />
+			by BERTOLOTTI Paolo Francesco
+			<hr />
+			<strong>Istruzioni.</strong>
+			<u>Clicca e trascina</u> per posizionare gli oggetti.<br />
+			<u style="margin-left:70px">Click singolo</u> per ruotare gli oggetti di 45°.<br/>
+			<a href="img/solucions.gif">Idee1</a> / <a href="img/solucions2.gif">Idee2</a>
+		</div>
+		
+		<div id="commands" style="border-top:1px solid black;margin-top:5px;padduing-top:5px;">
+			<div id="obj_to_rotate" style="float:left;">Ruotare il pezzo verde di</div>
+			<input type="input" id="rotate_deg" style="text-align:right; width:30px;" />°
+			<img src="img/rotate_left.png" alt="rotate" style="width:1em;cursor:pointer;" id="rotate" />
+		</div>
+		
+		<div id="main">
+			<div id="tngrm1" class="triangle-down geo"></div>
+			<div id="tngrm2" class="triangle-right geo"></div>
+			<div id="tngrm3" class="triangle-up geo">&nbsp;</div>
+			<div id="tngrm4" class="square geo">&nbsp;</div>
+			<div id="tngrm5" class="triangle-bottomright geo"></div>
+			<div id="tngrm6" class="parallelogram geo">&nbsp;</div>
+			<div id="tngrm7" class="triangle-left geo">&nbsp;</div>
+			
+		</div>
+		
+	</div>
+</body>
+
+</html>

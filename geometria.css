@@ -1,0 +1,84 @@
+.square {
+	width : 140px;
+	height : 140px;
+	background : #9933FF;
+	transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	
+	position: relative;
+	top: -470px;
+	left: 129px;
+}
+
+.triangle-up { 
+	width: 0; 
+	height: 0; 
+	border-left: 100px solid transparent; 
+	border-right: 100px solid transparent; 
+	border-bottom: 100px solid #999999; 
+	
+	position: relative;
+	top: -300px;
+} 
+.triangle-down { 
+	width: 0; 
+	height: 0; 
+	border-left: 200px solid transparent; 
+	border-right: 200px solid transparent; 
+	border-top: 200px solid #FF00FF; 
+} 
+.triangle-right { 
+	width: 0; 
+	height: 0; 
+	border-top: 200px solid transparent; 
+	border-bottom: 200px solid transparent; 
+	border-left: 200px solid #FFCC33; 
+	
+	position: relative;
+	top: -200px;
+} 
+.triangle-left { 
+	width: 0; 
+	height: 0; 
+	border-top: 100px solid transparent; 
+	border-bottom: 100px solid transparent; 
+	border-right: 100px solid #00CC66;
+	
+	position: relative;
+	top: -1139px;
+	left: 200px;
+}
+
+
+.triangle-bottomright {
+	width : 0;
+	height : 0;
+	border-bottom : 200px solid #3333FF; 
+	border-left : 200px solid transparent;
+	
+	position: relative;
+	top: -640px;
+	left: 200px;
+}      
+
+.parallelogram {
+	width: 100px;
+	height: 200px;
+	-webkit-transform: skew(0deg, -45deg);
+	-moz-transform: skew(0deg, -45deg);
+	-o-transform: skew(0deg, -45deg);
+	-ms-transform: skew(0deg, -45deg);
+	background: black;
+	
+	position: relative;
+	top: -990px;
+	left: 300px;
+}
+
+.geo {
+	z-index:1;
+}
+
